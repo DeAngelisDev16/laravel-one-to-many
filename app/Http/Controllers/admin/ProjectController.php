@@ -46,7 +46,8 @@ class ProjectController extends Controller
                 'title' => 'required|min:5|max:50|unique:projects,title',
                 'description' => 'required|min:20',
                 'github_reference' => 'required|min:10',
-                'image' => 'required|image'
+                'image' => 'required|image',
+                'type_id' => 'required|exists:types,id',
 
 
 
@@ -113,7 +114,9 @@ class ProjectController extends Controller
                 'title' => 'required|min:5|max:50',
                 'description' => 'required|min:20',
                 'github_reference' => 'required|min:10',
-                'image' => 'required|image'
+                'image' => 'required|image',
+                'type_id' => 'required|exists:types,id',
+
 
 
 

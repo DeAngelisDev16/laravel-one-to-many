@@ -32,7 +32,7 @@
           
           <select class="form-control" name="type_id" id="">
             @foreach ($types as $type)
-            <option value="{{$type->id}}">{{$type->name}}</option>
+            <option value="{{$type->id}}" {{old('type_id', $project->id) == $type->id ? 'selected' : ''}}>{{$type->name}}</option>
                 
             @endforeach
           </select>
