@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
+use App\Models\Type;
+
 
 class TypeSeeder extends Seeder
 {
@@ -16,5 +17,12 @@ class TypeSeeder extends Seeder
     public function run()
     {
         //
+        $types = ['Front-End', 'Back-end', 'Full-stack'];
+
+        foreach ($types as $typeName) {
+            $type = new Type();
+            $type->name = $typeName;
+            $type->save();
+        }
     }
 }

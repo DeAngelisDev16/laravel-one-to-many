@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Models\Project;
+use App\Models\Type;
+
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,6 +23,8 @@ class ProjectTableSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $newProject = new Project();
+            $newProject->type_id = Type::inRandomOrder()->first()->id;
+
             $newProject->slug = Str::slug($newProject->title);
             $newProject->title = $faker->sentence(3);
             $newProject->description = $faker->text(200);
