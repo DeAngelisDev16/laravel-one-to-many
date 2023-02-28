@@ -30,6 +30,15 @@
         </div>
         <div class="mb-3">
           
+          <select class="form-control" name="type_id" id="">
+            @foreach ($types as $type)
+            <option value="{{$type->id}}">{{$type->name}}</option>
+                
+            @endforeach
+          </select>
+        </div>
+        <div class="mb-3">
+          
             <input type="text" class="form-control" placeholder="Add project description" name="description" value="{{old('description', $project->description)}}" >
         </div>
         <div class="mb-3">
